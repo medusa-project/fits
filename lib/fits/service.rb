@@ -37,7 +37,7 @@ module Fits
       raise RuntimeError, "Fits::Service not configured. Please call Fits::Service.instance.configure(config_hash)." unless self.configured
       uri = URI.parse(self.service_url)
       uri.path = uri.path + path
-      request_opts = {:httpauth => :basic, :ssl_verifyhost => 0, :params => request_params, :follow_location => 1}
+      request_opts = {:httpauth => :basic, :ssl_verifyhost => 0, :params => request_params, :followlocation => 1}
       request_opts.merge!(:userpwd => "#{user}:#{password}") if user and password
       response = Typhoeus::Request.get(uri.to_s, request_opts)
       if response.code != 200
