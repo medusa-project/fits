@@ -17,4 +17,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_dependency 'typhoeus', ">= 0.6.2"
+# we need something that will be in 0.5.11 or later but was not in 0.5.10
+#  gem.add_dependency 'ethon', ">= 0.5.11"
+
 end
